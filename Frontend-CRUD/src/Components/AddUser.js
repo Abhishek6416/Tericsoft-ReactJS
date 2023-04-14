@@ -1,68 +1,89 @@
-import React, { useState } from 'react'
-import { FormControl,FormGroup,InputLabel,Input, TextField } from '@mui/material'
-// import ReactDatePicker from 'react-datepicker'
-import { LocalizationProvider } from '@mui/x-date-pickers'
-import { DatePicker } from '@mui/x-date-pickers'
-import { AdapterFormats } from '@mui/x-date-pickers'
-import {AdapterDayjs} from "@mui/x-date-pickers/AdapterDayjs"
-// import {Radio} from '@material/core'
-// import { CheckboxClassKey } from '@mui/material'
+import React from 'react'
+import { useState } from 'react'
+import { FormGroup,FormControl, Typography, InputLabel, Input, Button,styled } from '@mui/material'
+import { adduser } from './apiService/api'
+import { useNavigate } from 'react-router-dom'
+
+const Container=styled(FormGroup)`
+width:50%;
+margin:5% auto 0 auto;
+
+& > div {
+    margin-top:20px
+}
+`
+const initValues={
+
+    name:'',
+    username:'',
+    email:'',
+    phone:'',
+}
 
 export default function AddUser() {
+    const [user,setUser]=useState(initValues)
 
-    const[value,setValue]=useState(null)
+    const navigate=useNavigate();
+
+
+    const handleChange =(e)=>{
+        // console.log(e.target.name,e.target.value)
+        setUser({...user,[e.target.name]:e.target.value})
+        console.log(user)
+
+
+    }
+
+
+    const handleClick =async ()=>{
+
+      await  adduser(user);
+      navigate('/all')
+     
+
+    }
   return (
-    <FormGroup>
-
-        <FormControl>
-
-<InputLabel>Name</InputLabel>
-<Input/>
-
-        </FormControl>
+    <div>
+    <Container>
+    <Typography variant='h3'>ADD USER</Typography>
 
 
-
-        <FormControl>
-
-<InputLabel>Email</InputLabel>
-<Input/>
-
-        </FormControl>
+    <FormControl>
+    <InputLabel>Name</InputLabel>
+    <Input onChange={handleChange} name="name"/>
+    </FormControl>
 
 
-        <FormControl>
-
-<InputLabel>Phone</InputLabel>
-<Input/>
-
-        </FormControl>
-
-        {/* <FormControl> */}
+    <FormControl>
+    <InputLabel>UserName</InputLabel>
+    <Input onChange={handleChange}   name="username"/>
+    </FormControl>
 
 
-            {/* <ReactDatePicker selected={selectedDate} dateFormat="yyyy/mm/dd" 
-            filterDate={date=>date.getDay()!=5}
-            
-            showYearDropdown scrollableMonthYearDropdown/> */}
+    <FormControl>
+    <InputLabel>Email</InputLabel>
+    <Input onChange={handleChange}   name="email"/>
+    </FormControl>
 
 
-           
-        {/* </FormControl> */}
+    <FormControl>
+    <InputLabel>Phone</InputLabel>
+    <Input onChange={handleChange}   name="phone"/>
+    </FormControl>
 
-        <LocalizationProvider dateAdapter={AdapterDayjs}>
-        <DatePicker  label="select date" value={value}
-        onChange={(newvalue)=>setValue(newvalue)} 
-                renderInput={(props)=><TextField{...props}/>}
-        />
-        </LocalizationProvider>
+
+    <FormControl>
+    <Button variant='contained' onClick={handleClick}>Submit</Button>
+    </FormControl>
 
 
 
-        /
+
+    </Container>
 
 
-       
-    </FormGroup>
+
+
+    </div>
   )
 }
