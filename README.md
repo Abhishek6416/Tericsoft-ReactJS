@@ -32,7 +32,14 @@ Clone the repository: git clone https://github.com/Abhishek6416/Tericsoft-ReactJ
 
 
 1 .Open the application in a web browser: http://127.0.0.1:3005/users
+
+
+
 2 .Use the navigation menu to access the different pages.
+
+
+
+
 3 .Add, delete, or update employee details as necessary.
 
 
