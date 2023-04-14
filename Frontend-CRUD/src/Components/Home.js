@@ -5,7 +5,7 @@ export default function Home() {
     <div>
       <h1>HomePage</h1>
 
-      <h2 >Please click on above links ALLUSER & ADDUSER </h2>
+      <h2 >Please click on the above NavBar links for ALLUSER & ADDUSER </h2>
     </div>
   )
 }

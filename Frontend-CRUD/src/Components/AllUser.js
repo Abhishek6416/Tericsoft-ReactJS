@@ -5,10 +5,7 @@ import { getusers,deleteuser } from './apiService/api'
 import { Link } from 'react-router-dom'
 
 
-// const Tebble=styled(Table)`
-// width:90%;
-// margin:1% auto 0 auto;
-// `
+
 
 const Teble=styled(Table)`
 width:90%;
