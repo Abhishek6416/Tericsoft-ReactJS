@@ -18,13 +18,17 @@ This is a web application for managing employees. It allows users to add new emp
 # Installation
 
 
- Clone the repository: git clone https://github.com/Abhishek6416/Tericsoft-ReactJS.git
+
+
+Clone the repository: git clone https://github.com/Abhishek6416/Tericsoft-ReactJS.git
  Install dependencies: npm install
  Start the development server: npm start
 
 
 
 # Usage
+
+
 
 
 1 .Open the application in a web browser: http://127.0.0.1:3005/users
