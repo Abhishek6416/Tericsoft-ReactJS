@@ -4,7 +4,7 @@
 
 
 
-This is a web application for managing employees. It allows users to add new employees, delete existing employees, and update employee details. The application is built using React JS, React Router Dom, and Material UI.
+This is a web application for managing employees. It allows users to add new employees, delete existing employees, and update employee details. The application is built using React JS, React-Router-Dom, and Material UI.
 
 
 # Features
